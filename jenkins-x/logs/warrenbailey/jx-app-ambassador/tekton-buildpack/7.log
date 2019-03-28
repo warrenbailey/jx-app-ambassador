@@ -1,0 +1,55 @@
+Step: build-step-credential-initializer-g9624:
+
+{"level":"warn","ts":1553787286.0817034,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1553787286.0823216,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-warrenbailey-jx-app-ambassador-tekton-bui:
+
+{"level":"warn","ts":1553787287.375402,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1553787287.975565,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/warrenbailey/jx-app-ambassador\" @ \"tekton-buildpack\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-build-build:
+
+cat: /builder/home/basic-auth-user.json: No such file or directory
+cat: /builder/home/basic-auth-pass.json: No such file or directory
+rm -rf jx-app-ambassador/charts
+rm -rf jx-app-ambassador/jx-app-ambassador*.tgz
+rm -rf jx-app-ambassador/requirements.lock
+helm init --client-only
+Creating /builder/home/.helm 
+Creating /builder/home/.helm/repository 
+Creating /builder/home/.helm/repository/cache 
+Creating /builder/home/.helm/repository/local 
+Creating /builder/home/.helm/plugins 
+Creating /builder/home/.helm/starters 
+Creating /builder/home/.helm/cache/archive 
+Creating /builder/home/.helm/repository/repositories.yaml 
+Adding stable repo with URL: https://kubernetes-charts.storage.googleapis.com 
+Adding local repo with URL: http://127.0.0.1:8879/charts 
+$HELM_HOME has been configured at /builder/home/.helm.
+Not installing Tiller due to 'client-only' flag having been set
+Happy Helming!
+helm repo add jenkinsxio http://chartmuseum.jenkins-x.io
+"jenkinsxio" has been added to your repositories
+helm repo add ambassador https://www.getambassador.io
+"ambassador" has been added to your repositories
+rm -rf requirements.lock
+helm dependency build jx-app-ambassador
+Hang tight while we grab the latest from your chart repositories...
+...Unable to get an update from the "local" chart repository (http://127.0.0.1:8879/charts):
+	Get http://127.0.0.1:8879/charts/index.yaml: dial tcp 127.0.0.1:8879: connect: connection refused
+...Successfully got an update from the "ambassador" chart repository
+...Successfully got an update from the "jenkinsxio" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈Happy Helming!⎈
+Saving 1 charts
+Downloading ambassador from repo https://www.getambassador.io
+Deleting outdated charts
+helm lint jx-app-ambassador
+==> Linting jx-app-ambassador
+Lint OK
+
+1 chart(s) linted, no failures
+Step: build-step-build-helm-build:
+
+container_linux.go:247: starting container process caused "chdir to cwd (\"/workspace/source/charts/jx-app-ambassador\") set in config.json failed: no such file or directory"
