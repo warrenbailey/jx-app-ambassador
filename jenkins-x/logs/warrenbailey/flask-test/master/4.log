@@ -1,0 +1,124 @@
+Step: build-step-credential-initializer-ffhss:
+
+{"level":"warn","ts":1553771779.8354776,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1553771779.8374133,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-warrenbailey-flask-test-master-hgdtn:
+
+{"level":"warn","ts":1553771781.405785,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1553771782.560061,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/warrenbailey/flask-test\" @ \"v0.0.14\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-setup-jx-git-credentials:
+
+Generated Git credentials file /workspace/xdg_config/git/credentials
+Step: build-step-build-python-unittest:
+
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+Step: build-step-build-container-build:
+
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+ERROR: logging before flag.Parse: E0328 11:16:39.881047      11 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0328 11:16:39.885307      11 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2019/03/28 11:16:39 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0001] Downloading base image python:onbuild        
+2019/03/28 11:16:41 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Executing 3 build triggers                   
+[36mINFO[0m[0002] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0002] Checking for cached layer 10.47.243.55:5000/4588a2b3b8b742c1f5cc73ba8156758346f3757e5e98c7ce9346361d29e74611... 
+2019/03/28 11:16:41 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] No cached layer found for cmd RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0002] Unpacking rootfs as cmd RUN pip install --no-cache-dir -r requirements.txt requires it. 
+[36mINFO[0m[0019] Taking snapshot of full filesystem...        
+[36mINFO[0m[0025] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0025] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0025] Taking snapshot of files...                  
+[36mINFO[0m[0025] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0025] cmd: /bin/sh                                 
+[36mINFO[0m[0025] args: [-c pip install --no-cache-dir -r requirements.txt] 
+Collecting Click==7.0 (from -r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl (81kB)
+Collecting Flask==1.0.2 (from -r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/7f/e7/08578774ed4536d3242b14dacb4696386634607af824ea997202cd0edb4b/Flask-1.0.2-py2.py3-none-any.whl (91kB)
+Collecting itsdangerous==1.1.0 (from -r requirements.txt (line 3))
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting Jinja2==2.10 (from -r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/7f/ff/ae64bacdfc95f27a016a7bed8e8686763ba4d277a78ca76f32659220a731/Jinja2-2.10-py2.py3-none-any.whl (126kB)
+Collecting MarkupSafe==1.1.0 (from -r requirements.txt (line 5))
+  Downloading https://files.pythonhosted.org/packages/08/04/f2191b50fb7f0712f03f064b71d8b4605190f2178ba02e975a87f7b89a0d/MarkupSafe-1.1.0-cp36-cp36m-manylinux1_x86_64.whl
+Collecting Werkzeug==0.14.1 (from -r requirements.txt (line 6))
+  Downloading https://files.pythonhosted.org/packages/20/c4/12e3e56473e52375aa29c4764e70d1b8f3efa6682bef8d0aae04fe335243/Werkzeug-0.14.1-py2.py3-none-any.whl (322kB)
+Installing collected packages: Click, MarkupSafe, Jinja2, Werkzeug, itsdangerous, Flask
+Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10 MarkupSafe-1.1.0 Werkzeug-0.14.1 itsdangerous-1.1.0
+You are using pip version 10.0.1, however version 19.0.3 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[36mINFO[0m[0028] Taking snapshot of full filesystem...        
+[36mINFO[0m[0032] Pushing layer 10.47.243.55:5000/4588a2b3b8b742c1f5cc73ba8156758346f3757e5e98c7ce9346361d29e74611 to cache now 
+[36mINFO[0m[0032] Using files from context: [/workspace/source] 
+2019/03/28 11:17:12 pushed blob sha256:5bbddac072e6f9acdc052f320046fc89b527d66484a4163c2d2946d1625ff473
+[36mINFO[0m[0032] COPY . /usr/src/app                          
+[36mINFO[0m[0033] Taking snapshot of files...                  
+[36mINFO[0m[0033] ENV PORT 8080                                
+[36mINFO[0m[0033] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0033] EXPOSE 8080                                  
+[36mINFO[0m[0033] cmd: EXPOSE                                  
+[36mINFO[0m[0033] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0033] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0033] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0033] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0033] CMD ["app.py"]                               
+[36mINFO[0m[0033] No files changed in this command, skipping snapshotting. 
+2019/03/28 11:17:13 pushed blob sha256:9427e8bb3c7a80f221c3227ba4c66deb71071519da3f1550adc9dc833071a77f
+2019/03/28 11:17:13 10.47.243.55:5000/4588a2b3b8b742c1f5cc73ba8156758346f3757e5e98c7ce9346361d29e74611:latest: digest: sha256:be6d9de562ba0a482410529063369e2d94cf7145e705d92fb82fdbb9b29efa4a size: 428
+2019/03/28 11:17:13 existing blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2019/03/28 11:17:13 existing blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2019/03/28 11:17:13 existing blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2019/03/28 11:17:13 existing blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2019/03/28 11:17:13 existing blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2019/03/28 11:17:13 existing blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2019/03/28 11:17:13 existing blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2019/03/28 11:17:13 existing blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2019/03/28 11:17:13 existing blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2019/03/28 11:17:13 pushed blob sha256:b8ab73e28656b90f7207461a0bcb87c8528a3f132662edbef176ec80cc1a7f58
+2019/03/28 11:17:13 pushed blob sha256:46dc6100dd592af13a044e71369551bda397280a0b0ac5d22e02847feff3ff05
+2019/03/28 11:17:13 pushed blob sha256:bd1dff8e30c251388798e825e0b69717a635b20a7982d55a5a684b2ce92ba6da
+2019/03/28 11:17:13 pushed blob sha256:9427e8bb3c7a80f221c3227ba4c66deb71071519da3f1550adc9dc833071a77f
+2019/03/28 11:17:13 10.47.243.55:5000/warrenbailey/flask-test:0.0.14: digest: sha256:d6e0e3d03f444f964dff960541867d7e665c2fdcc2e1ba365883a4c35d85032d size: 2224
+Step: build-step-build-post-build:
+
+no CVE provider running in the current jx namespace so skip adding image to be analysed
+Step: build-step-promote-changelog:
+
+Converted /workspace/source/charts/flask-test to an unshallow repository
+Generating change log from git ref afbceffe8c83a918234bf18b93397c6a8daa885f => da5ae97d1fd886b90bc568b9c14b94b5da6882d3
+Failed to enrich commits with issues: User.jenkins.io "-0" is invalid: metadata.name: Invalid value: "-0": a DNS-1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')
+Failed to enrich commits with issues: User.jenkins.io "-0" is invalid: metadata.name: Invalid value: "-0": a DNS-1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')
+Finding issues in commit messages using git format
+No release found for warrenbailey/flask-test and tag v0.0.14 so creating a new release
+Updated the release information at https://github.com/warrenbailey/flask-test/releases/tag/v0.0.14
+generated: /workspace/source/charts/flask-test/templates/release.yaml
+Created Release flask-test-0-0-14 resource in namespace jx
+Updating PipelineActivity warrenbailey-flask-test-master-4 with version 0.0.14
+Updated PipelineActivities warrenbailey-flask-test-master-4 with release notes URL: https://github.com/warrenbailey/flask-test/releases/tag/v0.0.14
+Step: build-step-promote-helm-release:
+
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x http://chartmuseum.jenkins-x.io
+Successfully added Helm repository jenkins-x.
+Adding missing Helm repo: releases http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository releases.
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file flask-test-0.0.14.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+Step: build-step-promote-jx-promote:
+
+prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/jx/issues/2410
+Promoting app flask-test version 0.0.14 to namespace jx-staging
+Created Pull Request: https://github.com/warrenbailey/environment-wbailey-dev1-staging/pull/4
+
+Pull Request https://github.com/warrenbailey/environment-wbailey-dev1-staging/pull/4 is merged at sha 2ba303327bad5c3ce3d97dd45673738cd831da1d
+Pull Request merged but we are not waiting for the update pipeline to complete!
