@@ -1,0 +1,17 @@
+Step: build-step-credential-initializer-q6l5j:
+
+{"level":"warn","ts":1553772275.252376,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1553772275.2528803,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-warrenbailey-environment-wbailey-dev1-sta:
+
+{"level":"warn","ts":1553772276.3306444,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1553772277.471109,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/warrenbailey/environment-wbailey-dev1-staging\" @ \"b6fbac2b5f4778750fcdd8292665c4d235e1cc13\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-build-helm-build:
+
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x http://chartmuseum.jenkins-x.io
+Successfully added Helm repository jenkins-x.
+Adding missing Helm repo: releases http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository releases.
