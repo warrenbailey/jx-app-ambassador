@@ -1,0 +1,13 @@
+Step: build-step-credential-initializer-sdp2k:
+
+{"level":"warn","ts":1553765866.1556003,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1553765866.1574008,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-warrenbailey-jx-app-ambassador-tekton-bui:
+
+{"level":"warn","ts":1553765866.7574637,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1553765867.8177636,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/warrenbailey/jx-app-ambassador\" @ \"tekton-buildpack\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-build-helm-build:
+
+container_linux.go:247: starting container process caused "chdir to cwd (\"/workspace/source/charts/jx-app-ambassador\") set in config.json failed: no such file or directory"
