@@ -1,0 +1,41 @@
+Step: build-step-credential-initializer-pc2bj:
+
+{"level":"warn","ts":1553795032.4689887,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1553795032.4700735,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-warrenbailey-jx-app-istio-tekton-buildpac:
+
+{"level":"warn","ts":1553795033.889054,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1553795034.5131526,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/warrenbailey/jx-app-istio\" @ \"tekton-buildpack\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-build-build:
+
+cat: /builder/home/basic-auth-user.json: No such file or directory
+cat: /builder/home/basic-auth-pass.json: No such file or directory
+rm -rf charts
+rm -rf jx-app-istio*.tgz
+rm -rf requirements.lock
+helm init --client-only
+Creating /builder/home/.helm 
+Creating /builder/home/.helm/repository 
+Creating /builder/home/.helm/repository/cache 
+Creating /builder/home/.helm/repository/local 
+Creating /builder/home/.helm/plugins 
+Creating /builder/home/.helm/starters 
+Creating /builder/home/.helm/cache/archive 
+Creating /builder/home/.helm/repository/repositories.yaml 
+Adding stable repo with URL: https://kubernetes-charts.storage.googleapis.com 
+Adding local repo with URL: http://127.0.0.1:8879/charts 
+$HELM_HOME has been configured at /builder/home/.helm.
+Not installing Tiller due to 'client-only' flag having been set
+Happy Helming!
+helm repo add jenkinsxio http://chartmuseum.jenkins-x.io
+"jenkinsxio" has been added to your repositories
+rm -rf requirements.lock
+helm dependency build jx-app-istio
+No requirements found in jx-app-istio/charts.
+helm lint jx-app-istio
+==> Linting jx-app-istio
+[INFO] Chart.yaml: icon is recommended
+
+1 chart(s) linted, no failures
